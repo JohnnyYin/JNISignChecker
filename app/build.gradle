@@ -35,11 +35,17 @@ model {
             minifyEnabled = true
             proguardFiles.add(file("proguard-rules.pro"))
             signingConfig = $("android.signingConfigs.myConfig")
+            ndk {
+                cppFlags.add("-DCHECK_SIGN=true")
+            }
         }
         debug {
             minifyEnabled = true
             proguardFiles.add(file("proguard-rules.pro"))
             signingConfig = $("android.signingConfigs.myConfig")
+            ndk {
+                cppFlags.add("-DCHECK_SIGN=true")
+            }
         }
     }
 
