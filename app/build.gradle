@@ -37,6 +37,7 @@ model {
             signingConfig = $("android.signingConfigs.myConfig")
             ndk {
                 cppFlags.add("-DCHECK_SIGN=true")
+                debuggable = false
             }
         }
         debug {
@@ -45,6 +46,8 @@ model {
             signingConfig = $("android.signingConfigs.myConfig")
             ndk {
                 cppFlags.add("-DCHECK_SIGN=true")
+                // 这句加上才能debug jni
+                debuggable = true
             }
         }
     }
